@@ -193,7 +193,7 @@ function entrar() {
 }
 
 
-if (localStorage.getItem("cadastrado") == "nao") {
+if (localStorage.getItem("cadastrado") != "nao" || localStorage.getItem("cadastrado") != "sim" || ) {
     divcad.style.display = "block"
     divamenuinicial.style.display = "none"
     divmsg.style.display = "none"
