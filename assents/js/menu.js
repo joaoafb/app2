@@ -207,8 +207,10 @@ function body() {
         divcad.style.display = "none"
         divamenuinicial.style.display = "block"
         divmsg.style.display = "block"
-    }
+   
     localStorage.setItem("cadastrado", "")
+        location.reload()
+         }
 }
 
 function entrar() {
