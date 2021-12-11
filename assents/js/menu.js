@@ -189,30 +189,31 @@ function aulaquatro() {
 }
 
 function body() {
+
+    if (localStorage.getItem("cadastrado") == "") {
+        divcad.style.display = "block"
+        divamenuinicial.style.display = "none"
+        divmsg.style.display = "none"
+    }
+
+    if (localStorage.getItem("cadastrado") == "") {
+
+        divcad.style.display = "block"
+        divamenuinicial.style.display = "none"
+        divmsg.style.display = "none"
+
+    } else {
+
+        divcad.style.display = "none"
+        divamenuinicial.style.display = "block"
+        divmsg.style.display = "block"
+    }
     localStorage.setItem("cadastrado", "")
 }
 
 function entrar() {
     divadm.style.display = "None"
 
-}
-if (localStorage.getItem("cadastrado") == "") {
-    divcad.style.display = "block"
-    divamenuinicial.style.display = "none"
-    divmsg.style.display = "none"
-}
-
-if (localStorage.getItem("cadastrado") == "") {
-
-    divcad.style.display = "block"
-    divamenuinicial.style.display = "none"
-    divmsg.style.display = "none"
-
-} else {
-
-    divcad.style.display = "none"
-    divamenuinicial.style.display = "block"
-    divmsg.style.display = "block"
 }
 
 function cadastrado() {
