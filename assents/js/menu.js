@@ -72,6 +72,26 @@ function pagehelp() {
 }
 
 function pageconfig() {
+
+
+
+    db.collection("usuarios").doc(localStorage.getItem("nome")).get().then((doc) => {
+        if (doc.exists) {
+            id.innerHTML = doc.data().id
+            mostrarnome.innerHTML = doc.data().nome;
+            mostrarcurso.innerHTML = doc.data().ano + "° " + doc.data().curso;
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+
+
+
+
+
     menu.style.display = "block"
     divamenuinicial.style.display = "none"
     divadm.style.display = "none"
@@ -170,4 +190,88 @@ function aulaquatro() {
 
 function entrar() {
     divadm.style.display = "None"
+}
+
+
+if (localStorage.getItem("cadastrado") == "nao") {
+    divcad.style.display = "block"
+    divamenuinicial.style.display = "none"
+    divmsg.style.display = "none"
+} else {
+
+    divcad.style.display = "none"
+    divamenuinicial.style.display = "block"
+    divmsg.style.display = "block"
+}
+
+function cadastrado() {
+    divsucesso.style.display = "none"
+    divcad.style.display = "none"
+    divamenuinicial.style.display = "block"
+    divmsg.style.display = "block"
+}
+
+function cadastrar() {
+
+    var nome = document.querySelector("#inputnome")
+    var id = document.querySelector("#inputid")
+    var inputcurso = document.querySelector("#inputcurso")
+    var ano = document.querySelector("#inputano")
+
+
+
+    if (ano.value == "3" || ano.value == "2" || ano.value == "1" && inputcurso.value == "adm" ||
+        inputcurso.value == "seg" ||
+        inputcurso.value == "ADM" || inputcurso.value == "SEG" ||
+        inputcurso.value == "Adm" || inputcurso.value == "Seg") {
+        caduser()
+
+    } else {
+        document.getElementById("alert").style.display = "block"
+
+        document.getElementById("alert").innerHTML =
+            'No Campo Ano: Digite 1, 2 ou 3!<br> e No Campo De Curso Digite ADM ou SEG'
+        setInterval(function() {
+            document.getElementById("alert").style.display = "none"
+        }, 4000);
+    }
+
+
+}
+
+function caduser() {
+    var nome = document.querySelector("#inputnome")
+    var id = document.querySelector("#inputid")
+    var inputcurso = document.querySelector("#inputcurso")
+    var ano = document.querySelector("#inputano")
+
+    localStorage.setItem("nome", inputnome.value)
+    db.collection("usuarios").doc(nome.value).set({
+            nome: nome.value,
+            id: id.value,
+            curso: inputcurso.value.toUpperCase(),
+            ano: ano.value,
+            horario: firebase.firestore.FieldValue.serverTimestamp()
+
+        })
+        .then(() => {
+            divcad.style.display = "none"
+            divsucesso.style.display = "block"
+            localStorage.setItem("cadastrado", "sim")
+            document.getElementById("alert").style.display = "block"
+            console.log("Cadastrado Com Sucesso!")
+            document.getElementById("alert").innerHTML = "Cadastrado Com Sucesso!"
+            setInterval(function() {
+                document.getElementById("alert").style.display = "none"
+            }, 4000);
+        })
+        .catch((error) => {
+            localStorage.setItem("cadastrado", "nao")
+            document.getElementById("alert").style.display = "block"
+            console.log("Erro ao Cadastrar!")
+            document.getElementById("alert").innerHTML = "Erro ao Cadastrar! Contate o Criador!"
+            setInterval(function() {
+                document.getElementById("alert").style.display = "none"
+            }, 4000);
+        });
 }

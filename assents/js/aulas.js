@@ -1,4 +1,5 @@
 function segunda() {
+    document.querySelector("#proximo").style.display = "block"
     divaulas.style.display = "Block"
     divdias.style.display = "none"
     document.querySelector("#titulodia").innerText = "Segunda-Feira"
@@ -12,6 +13,7 @@ function segunda() {
 
 
 function terca() {
+    document.querySelector("#proximo").style.display = "block"
     document.querySelector("#anterior").style.display = "block"
     divaulas.style.display = "Block"
     divdias.style.display = "none"
@@ -27,6 +29,7 @@ function terca() {
 
 
 function quarta() {
+    document.querySelector("#proximo").style.display = "block"
     document.querySelector("#anterior").style.display = "block"
     divaulas.style.display = "Block"
     divdias.style.display = "none"
@@ -42,6 +45,7 @@ function quarta() {
 
 
 function quinta() {
+    document.querySelector("#proximo").style.display = "block"
     document.querySelector("#anterior").style.display = "block"
     divaulas.style.display = "Block"
     divdias.style.display = "none"
@@ -61,10 +65,8 @@ function sexta() {
     divdias.style.display = "none"
     document.querySelector("#titulodia").innerText = "Sexta-Feira"
     curso.style.display = "none"
-    document.querySelector("#proximo").onclick = function() {
-        segunda()
-    }
-    document.querySelector("#anterior").onclick = function() {
-        quinta()
-    }
+    document.querySelector("#proximo").style.display = "None"
+}
+document.querySelector("#anterior").onclick = function() {
+    quinta()
 }

@@ -1,3 +1,7 @@
+var id = document.querySelector("#id")
+var mostrarnome = document.querySelector("#mostrarnome")
+var mostrarcurso = document.querySelector("#mostrarcurso")
+
 function copy() {
     navigator.clipboard.writeText(document.getElementById("id").textContent);
     document.getElementById("alert").style.display = "block"

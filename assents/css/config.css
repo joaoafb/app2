@@ -124,7 +124,7 @@ nav {
     margin-left: 10px;
     border: 1px solid gray;
     font-size: 8pt;
-    width: 40%;
+    width: 35%;
     border-radius: 5px;
     background-color: transparent;
     color: white;
@@ -297,4 +297,9 @@ select option {
 .flexrow {
     display: flex;
     flex-direction: row;
+}
+
+form label {
+    float: left;
+    margin-left: 35px;
 }
