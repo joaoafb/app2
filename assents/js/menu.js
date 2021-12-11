@@ -188,8 +188,13 @@ function aulaquatro() {
     document.querySelector("#aulaquatro").style.display = "block"
 }
 
+function body() {
+    localStorage.setItem("cadastrado", "")
+}
+
 function entrar() {
     divadm.style.display = "None"
+
 }
 if (localStorage.getItem("cadastrado") == "") {
     divcad.style.display = "block"
@@ -197,10 +202,12 @@ if (localStorage.getItem("cadastrado") == "") {
     divmsg.style.display = "none"
 }
 
-if (localStorage.getItem("cadastrado") == "nao") {
+if (localStorage.getItem("cadastrado") == "") {
+
     divcad.style.display = "block"
     divamenuinicial.style.display = "none"
     divmsg.style.display = "none"
+
 } else {
 
     divcad.style.display = "none"
