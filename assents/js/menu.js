@@ -191,9 +191,13 @@ function aulaquatro() {
 function entrar() {
     divadm.style.display = "None"
 }
+if (localStorage.getItem("cadastrado") == "") {
+    divcad.style.display = "block"
+    divamenuinicial.style.display = "none"
+    divmsg.style.display = "none"
+}
 
-
-if (localStorage.getItem("cadastrado") != "nao" || localStorage.getItem("cadastrado") != "sim" || ) {
+if (localStorage.getItem("cadastrado") == "nao") {
     divcad.style.display = "block"
     divamenuinicial.style.display = "none"
     divmsg.style.display = "none"
