@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="assents/img/logoapp.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>App Link</title>
+    <link rel="stylesheet" href="assents/css/menu.css">
+    <link rel="stylesheet" href="assents/css/top.css">
+    <link rel="stylesheet" href="assents/css/config.css">
+</head>
+
+<body>
+    <!--HEADER-->
+    <nav id="nav" style="background-color: #292a2e;" class="navbar fixed-top navbar-light">
+        <div class="container-fluid">
+            <span id="title" style="color: rgba(47, 241, 151, 1);">App Links</span>
+            <img width="30px" src="assents/img/logoapp.png" alt="">
+
+        </div>
+    </nav>
+    <br><br>
+
+    <!--CONFIGURAÇOES--><br>
+    <div id="config">
+        <div class="box-pequeno">
+            <img src="assents/img/user.png" alt="">
+            <div class="content-left">
+                <label for="">Nome:</label>
+                <span>João Vitor Alves</span> <br>
+                <label for="">Curso:</label>
+                <span>ADM 2º </span>
+                <br>
+
+                <label for="">Codigo(IFBA):</label>
+                <div style="display: flex;flex-direction: row;">
+                    <span id="id">20201intadm0029</span><button onclick="copy()" class="btn-pequeno">Copiar</button>
+                </div>
+
+            </div>
+
+
+        </div>
+        <br>
+        <div class="box-pequeno">
+
+            <div class="content-left">
+                <label for="">Links Clicados:</label>
+                <span>2</span>
+                <label for="">Links Compartilhados:</label>
+                <span>3</span>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="alert" class="box-alert fixed-bottom">ALERTA</div>
+
+    <!--MENU-->
+
+    <nav id="menu" class="navbar fixed-bottom navbar-light " style="background-color: #292a2e;">
+        <div class="container-fluid">
+
+            <div onclick="pageaulas()" class="btnmenu">
+                <button><i class="fas fa-user-graduate"></i></button><br>
+                <span>Aulas</span>
+            </div>
+
+
+            <div onclick="pageadm()" id="pageadm" class="btnmenu">
+                <button><i class="fas fa-user-lock"></i></button><br>
+                <span>Administrador</span>
+            </div>
+
+            <div onclick="pageconfig()" id="pageconfig" class="btnmenu">
+                <button><i class="fas fa-cog"></i></button><br>
+                <span>Configurações</span>
+            </div>
+
+            <div onclick="backmenu()" id="pagehelp" class="btnmenu">
+                <button><i class="fas fa-undo"></i></button><br>
+                <span>Voltar</span>
+    </nav>
+
+
+
+
+
+
+    </div>
+    </div>
+
+
+    <!--AULAS-->
+    <BR>
+    <div id="divmsg" class="box-pequeno">
+
+        <label>Mensagens:</label><br>
+        <span>MSG AQUI</span>
+
+        <br></div><br>
+    <div id="divcurso" class="box-pequeno">
+        <label for="">Curso:</label><br>
+        <span>ADM 2º </span>
+    </div>
+    <br>
+    <div id="divaulas" class="box-pequeno">
+        <div class="flexrow">
+            <button id="anterior" class="btn-pequeno"><i class="fas fa-arrow-left"></i>Dia Anterior</button>
+
+            <label id="titulodia" for="">
+                 <span style="font-size: 6pt;text-align: center;margin: 0 auto;color: gray;"  id="horario">
+                </span> Aulas de Hoje:</label><br>
+            <button id="proximo" class="btn-pequeno">Proximo dia<i class="fas fa-arrow-right"></i></button>
+        </div>
+        <br>
+        <!--AULA UM-->
+        <div id="aulaum">
+
+            <div onclick="auladois()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
+            </div>
+            <div class="aula">
+                <span><strong>1#</strong> INGLES</span><br>
+                <label style="font-size: 10pt;">Das 08hrs as 9hrs</label><br>
+                <label style="font-size: 10pt;">Prof Joao</label>><br>
+
+                <br>
+
+
+            </div>
+            <br>
+            <div class="btns">
+                <button class="btn">Entrar</button>
+                <button class="btn">Compartilhar</button>
+            </div>
+        </div>
+
+
+
+        <!--AULA 2-->
+        <div id="auladois">
+
+            <div onclick="aulaum()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: left;margin-top: 50px;" class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="aulatres()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
+            </div>
+            <div class="aula">
+                <span><strong>2#</strong> Matemática</span><br>
+                <label style="font-size: 10pt;">Das 09hrs as 10hrs</label><br>
+                <label style="font-size: 10pt;">Prof Pablo</label>><br>
+                <br>
+
+
+            </div>
+            <br>
+            <div class="btns">
+                <button class="btn">Entrar</button>
+                <button class="btn">Compartilhar</button>
+            </div>
+        </div>
+
+
+        <!--AULA TRES-->
+
+        <!--AULA 3-->
+        <div id="aulatres">
+
+            <div onclick="auladois()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: left;margin-top: 50px;" class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="aulaquatro()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
+            </div>
+            <div class="aula">
+                <span><strong>3#</strong> Fisica</span><br>
+                <label style="font-size: 10pt;">Das 10hrs as 11hrs</label><br>
+                <label style="font-size: 10pt;">Prof Lay</label>><br>
+                <br>
+
+
+            </div>
+            <br>
+            <div class="btns">
+                <button class="btn">Entrar</button>
+                <button class="btn">Compartilhar</button>
+            </div>
+        </div>
+
+
+        <!--AULA 4-->
+        <div id="aulaquatro">
+
+            <div onclick="aulatres()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: left;margin-top: 50px;" class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="aulaum()" class="arrow-right">
+                <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
+            </div>
+            <div class="aula">
+                <span><strong>4#</strong> Portugues</span><br>
+                <label style="font-size: 10pt;">Das 11hrs as 12hrs</label><br>
+                <label style="font-size: 10pt;">Prof Vinni</label>><br>
+                <br>
+
+
+            </div><br>
+            <div class="btns">
+                <button class="btn">Entrar</button>
+                <button class="btn">Compartilhar</button>
+
+            </div>
+
+        </div>
+        <br>
+
+
+
+        <button style="margin: 0 auto;justify-content: center;text-align: center;display: flex;
+          border: 1px solid gray;" id="btnmais" onclick="mais()" class="btn">Ver em Lista...</button>
+
+        <br>
+        <button style="display: none;margin: 0 auto;justify-content: center;text-align: center;display: flex;
+border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</button>
+        <br> <br> <br>
+
+
+    </div>
+
+
+
+
+    <!--AULAS EM LISTA-->
+    <div class="box-pequeno" id="divlista">
+        <br>
+        <!--AULA UM-->
+        <div id="aulaum">
+
+
+            <div class="aula">
+                <span><strong>1#</strong> INGLES</span><br>
+                <label style="font-size: 10pt;">Das 08hrs as 9hrs</label><br>
+                <label style="font-size: 10pt;">Prof Joao</label>><br>
+
+
+
+                <br>
+                <div class="btns">
+                    <button class="btn">Entrar</button>
+                    <button class="btn">Compartilhar</button>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <!--AULA 2-->
+        <div id="auladois">
+
+
+            <div class="aula">
+                <span><strong>2#</strong> Matemática</span><br>
+                <label style="font-size: 10pt;">Das 09hrs as 10hrs</label><br>
+                <label style="font-size: 10pt;">Prof Pablo</label>><br>
+                <br>
+
+                <div class="btns">
+                    <button class="btn">Entrar</button>
+                    <button class="btn">Compartilhar</button>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <!--AULA 3-->
+        <div id="aulatres">
+
+
+            <div class="aula">
+                <span><strong>3#</strong> Fisica</span><br>
+                <label style="font-size: 10pt;">Das 10hrs as 11hrs</label><br>
+                <label style="font-size: 10pt;">Prof Lay</label>><br>
+                <br>
+
+                <div class="btns">
+                    <button class="btn">Entrar</button>
+                    <button class="btn">Compartilhar</button>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <!--AULA 4-->
+        <div id="aulaquatro">
+
+
+            <div class="aula">
+                <span><strong>4#</strong> Portugues</span><br>
+                <label style="font-size: 10pt;">Das 11hrs as 12hrs</label><br>
+                <label style="font-size: 10pt;">Prof Vinni</label>><br>
+                <br>
+
+                <div class="btns">
+                    <button class="btn">Entrar</button>
+                    <button class="btn">Compartilhar</button>
+                </div>
+            </div><br>
+
+        </div>
+
+        <br>
+
+
+        <button style="display: none;margin: 0 auto;justify-content: center;text-align: center;display: flex;
+        border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</button><br> <br><br>
+    </div>
+
+
+
+
+    <div class="box-pequeno" id="divdias">
+
+        <span><strong>Selecione o Dia: </strong> </span><br><br>
+        <div style="margin: 0;display: flex;flex-direction: row;">
+            <button onclick="segunda()" class="btn">Segunda</button>
+            <button onclick="terca()" class="btn">Terça</button></div>
+        <br>
+        <div style="margin: 0;display: flex;flex-direction: row;">
+            <button onclick="quarta()" class="btn">Quarta</button>
+            <button onclick="quinta()" class="btn">Quinta</button></div>]
+
+        <div style="margin: 0;display: flex;flex-direction: row;">
+            <button onclick="sexta()" style="width: 90%;" class="btn">Sexta</button>
+        </div>
+    </div>
+
+    <!--CADASTRO-->
+    <div id="divcadastro" style="display: none;padding: 20px;justify-content: center;margin: 0 auto;" class="box-pequeno">
+
+        <span style="text-align: center;font-size: 15pt;"><Strong>Cadastro</Strong></span><br>
+        <label style="font-size: 10pt;color: gray;" for="">
+            (Será Necessario Somente <strong>UMA</strong> Vez!)</label>
+        <br>
+
+        <br>
+        <label for="inputnome">Seu Nome:</label><br>
+        <input size="20" maxlength="20" type="text" class="input" id="inputnome" placeholder="Digite Aqui">
+        <br>
+        <label for="inputid">Seu ID:</label><br>
+        <input size="15" maxlength="15" type="text" class="input" id="inputid" placeholder="Digite Seu ID">
+        <br>
+        <label for="turma">Sua Turma:</label><br>
+        <select name="" class="input" id="turma">
+            <option  value="">Selecione a Turma</option>
+
+            <option value="">1º Ano (ADM)</option>
+            
+            <option value="">1º Ano (SEG)</option>
+          
+            <option value="">2º Ano (ADM)</option>
+            
+            <option value="">2º Ano (SEG)</option>
+            
+            <option value="">3º Ano (ADM)</option>
+            
+            <option value="">3º Ano (SEG)</option>
+            
+        </select><br><br>
+
+        <button id="" class="input">Cadastrar</button>
+
+    </div>
+    <div class="center">
+        <div id="divsucesso">
+            <div class="box-pequeno">
+                <img src="https://cdn.pixabay.com/photo/2016/01/20/18/59/confirmation-1152155_640.png" alt="">
+                <br>
+
+
+            </div <br> <br>
+            <div class="center">
+                <button class="input">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--ADM-->
+
+    <!--CADASTRO-->
+
+    <div id="divadm" style=" display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;;display: none;padding: 20px;justify-content: center;margin: 0 auto;" class="box-pequeno">
+
+        <span style="text-align: center;font-size: 15pt;"><Strong>Login</Strong></span><br>
+
+        <br>
+
+        <br>
+        <label for="inputusuario">Seu Usuario: </label><br>
+        <input size="20" maxlength="20" type="text" class="input" id="inputusuario" placeholder="Digite Aqui">
+        <br>
+        <label for="inputpass">Seu Senha:</label><br>
+        <input size="15" maxlength="15" type="password" class="input" id="inputpass" placeholder="Digite Sua Senha">
+        <br>
+        <br><br>
+
+        <button id="" onclick="entrar()" class="input">Entrar</button>
+
+    </div>
+    <div id="menuinicial">
+        <div id="body">
+
+
+
+
+            <div onclick="pageaulas()" class="box-quadrado">
+                <button><i class="fas fa-user-graduate"></i></button><br>
+                <span>Aulas</span>
+            </div>
+
+
+            <div onclick="pageadm()" id="pageadm" class="box-quadrado">
+                <button><i class="fas fa-user-lock"></i></button><br>
+                <span>Admin</span>
+            </div>
+        </div>
+        <br>
+        <div id="body">
+            <div onclick="pageconfig()" id="pageconfig" class="box-quadrado">
+                <button><i class="fas fa-cog"></i></button><br>
+                <span>Config</span>
+            </div>
+
+            <div onclick="pagehelp()" id="pagehelp" class="box-quadrado">
+                <button><i class="fas fa-question-circle"></i></button><br>
+                <span>Ajuda</span>
+
+            </div>
+        </div>
+        <label style="color: gray;text-align: center;" class="fixed-bottom" for="">App Criado por <a target="_blank" style="color: rgba(47, 241, 151, 1);text-decoration: none;" href="https://www.instagram.com/jvitorafb/">João Vitor AFB</a> </label>
+</body>
+
+<script>
+</script>
+<script src="assents/js/config.js"></script>
+<script src="assents/js/menu.js"></script>
+<script src="assents/js/aulas.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="https://kit.fontawesome.com/d3c038606f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d3c038606f.js" crossorigin="anonymous"></script>
+
+</html>

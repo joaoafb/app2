@@ -1,0 +1,300 @@
+html {
+    box-sizing: border-box;
+    animation: suave 0.3s;
+    scroll-behavior: smooth;
+}
+
+@keyframes nav {
+    0% {
+        margin-top: -2000px;
+        filter: blur(2px);
+    }
+    100% {
+        margin-top: 0;
+        filter: blur(0);
+    }
+}
+
+@keyframes left {
+    from {
+        margin-left: -1000px;
+        filter: blur(10px);
+    }
+    to {
+        margin-left: 0;
+        filter: blur(0);
+    }
+}
+
+@keyframes right {
+    0% {
+        margin-left: -2000px;
+        filter: blur(2px);
+    }
+    100% {
+        margin-left: 0;
+        filter: blur(0);
+    }
+}
+
+@keyframes menu {
+    0% {
+        margin-bottom: -2000px;
+        filter: blur(2px);
+    }
+    100% {
+        margin-bottom: 0;
+        filter: blur(0);
+    }
+}
+
+@keyframes suave {
+    0% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
+#menuinicial {
+    animation: right 0.5s;
+}
+
+#divmsg {
+    animation: left 0.5s;
+}
+
+nav {
+    animation: menu 0.5s;
+}
+
+#nav {
+    animation: nav 0.5s;
+}
+
+.box-pequeno {
+    animation: left 0.3s;
+    box-sizing: border-box;
+    transition: all 1.5s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    width: 96%;
+    background-color: #292a2e;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.box-pequeno img {
+    float: right;
+    width: 65px;
+    margin-top: 7%;
+    margin-right: 10%;
+}
+
+#config .content-right {
+    padding: 10px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#config .content-right label {
+    font-size: 10pt;
+    color: gray;
+}
+
+#config .content-left {
+    padding: 10px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#config .content-left label {
+    font-size: 10pt;
+    color: gray;
+}
+
+.btn-pequeno {
+    margin-left: 10px;
+    border: 1px solid gray;
+    font-size: 8pt;
+    width: 40%;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    float: right;
+    transition: 0.5s;
+}
+
+.btn-pequeno:hover {
+    transition: 0.5s;
+    border: 1px solid rgba(47, 241, 151, 1);
+    color: rgba(47, 241, 151, 1);
+}
+
+.box-alert {
+    animation: suave 0.5s;
+    bottom: 80px;
+    text-align: center;
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    width: 80%;
+    height: auto;
+    color: white;
+    background-color: #292a2e;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.btn {
+    height: 45px;
+    margin: 0 auto;
+    outline: none;
+    border: 1px solid rgba(47, 241, 151, 1);
+    font-size: 8pt;
+    width: 40%;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    transition: 0.5s;
+    border: 1px solid rgba(47, 241, 151, 1);
+    color: rgba(47, 241, 151, 1);
+}
+
+.aula {
+    animation: suave 0.4s;
+    margin: 0 auto;
+    width: 85%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(47, 241, 151, 1);
+}
+
+.aula span {
+    font-size: 10pt;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    outline: none;
+    padding: 10px;
+    color: white;
+    background-color: transparent;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    animation: suave 0.4s;
+    border: 1px solid rgba(47, 241, 151, 1);
+    border-radius: 10px;
+    width: 80%;
+    height: 45px;
+}
+
+input::placeholder {
+    color: white;
+}
+
+select option {
+    background-color: #292a2e;
+    font-size: 8pt;
+    border-radius: 10px;
+}
+
+.box-pequeno button {
+    transition: 0.5s;
+    animation: suave 0.5s;
+    color: white;
+}
+
+.box-pequeno button:hover {
+    transition: 0.5s;
+    animation: suave 0.5s;
+    background-color: rgba(47, 241, 151, 1);
+    color: black;
+}
+
+#divsucesso {
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+}
+
+#divsucesso img {
+    text-align: center;
+    margin: 0 auto;
+    width: 100px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.center button:hover {
+    transition: 0.5s;
+    animation: suave 0.5s;
+    background-color: rgba(47, 241, 151, 1);
+    color: black;
+}
+
+#body {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.box-quadrado {
+    box-sizing: border-box;
+    animation: suave 0.5s;
+    transition: all 1.5s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: #292a2e;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.box-quadrado button {
+    width: 75%;
+    height: 75%;
+    background-color: transparent;
+    border: 0;
+    color: rgba(47, 241, 151, 1);
+}
+
+.box-quadrado button i {
+    zoom: 180%;
+}
+
+.box-quadrado span {
+    text-align: center;
+    color: white;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
