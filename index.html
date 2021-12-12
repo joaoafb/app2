@@ -19,8 +19,10 @@
     <!--HEADER-->
     <nav id="nav" style="background-color: #292a2e;" class="navbar fixed-top navbar-light">
         <div class="container-fluid">
+
             <span id="title" style="color: rgba(47, 241, 151, 1);">App Links</span>
-            <img width="30px" src="assents/img/logoapp.png" alt="">
+            <button onclick="resetar()" id="btnresetar" style="color: red;height: 30px;" class="btn-pequeno">RESETAR APP</button>
+            <img onclick="logo()" width="30px" src="assents/img/logoapp.png" alt="">
 
         </div>
     </nav>
@@ -39,8 +41,12 @@
 
                 <label for="">Codigo(IFBA):</label>
                 <div style="display: flex;flex-direction: row;">
-                    <span id="id">Você Não Cadastrou Seu ID</span><button onclick="copy()" class="btn-pequeno">Copiar</button>
+                    <span id="id">Você Não Cadastrou Seu ID</span>
+                    <button onclick="copy()" class="btn-pequeno">Copiar</button>
+                    <br>
+
                 </div>
+
 
             </div>
 
@@ -113,11 +119,16 @@
         <div class="flexrow">
             <button id="anterior" class="btn-pequeno"><i class="fas fa-arrow-left"></i>Dia Anterior</button>
 
-            <label id="titulodia" for="">
-                 <span style="font-size: 6pt;text-align: center;margin: 0 auto;color: gray;"  id="horario">
-                </span> Aulas de Hoje:</label><br>
-            <button id="proximo" class="btn-pequeno">Proximo dia<i class="fas fa-arrow-right"></i></button>
+
+            <button id="proximo" style="float: right;" class="btn-pequeno">Proximo dia<i class="fas fa-arrow-right"></i></button>
         </div>
+        <label style="color: rgba(47, 241, 151, 1);font-size: 15pt;text-align: center;   display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;" id="titulodia" for="">
+            <span style="font-size: 10pt;text-align: center;margin: 0 auto;color: gray;"  id="horario">
+           </span style="color:rgba(47, 241, 151, 1);"> Aulas de Hoje:</label><br>
         <br>
         <!--AULA UM-->
         <div id="aulaum">
@@ -408,16 +419,16 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
         <br>
 
         <br>
-        <label for="inputusuario">Seu Usuario: </label><br>
-        <input size="20" maxlength="20" type="text" class="input" id="inputusuario" placeholder="Digite Aqui">
-        <br>
-        <label for="inputpass">Seu Senha:</label><br>
-        <input size="15" maxlength="15" type="password" class="input" id="inputpass" placeholder="Digite Sua Senha">
-        <br>
-        <br><br>
+        <form action="">Seu Usuario: </label><br>
+            <input autocomplete="off" required size="20" maxlength="20" type="text" class="input" id="inputusuario" placeholder="Digite Aqui">
+            <br>
+            <label for="">Seu Senha:</label><br>
+            <input autocomplete="off" required size="15" maxlength="15" type="password" class="input" id="inputpass" placeholder="Digite Sua Senha">
+            <br>
+            <br><br>
 
-        <button id="" onclick="entrar()" class="input">Entrar</button>
-
+            <button onclick="logar()" type="button" class="input">Entrar</button>
+        </form>
     </div>
     <div id="menuinicial">
         <div id="body">
@@ -457,6 +468,7 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
 <script src="assents/js/config.js"></script>
 <script src="assents/js/menu.js"></script>
 <script src="assents/js/aulas.js"></script>
+<script src="assents/js/admin.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
