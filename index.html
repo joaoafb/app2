@@ -22,7 +22,7 @@
 
             <span id="title" style="color: rgba(47, 241, 151, 1);">App Links</span>
             <button onclick="resetar()" id="btnresetar" style="color: red;height: 30px;" class="btn-pequeno">RESETAR APP</button>
-            <img onclick="logo()" width="30px" src="assents/img/logoapp.png" alt="">
+            <img onclick="logo()" id="logo" width="30px" src="assents/img/logoapp.png" alt="">
 
         </div>
     </nav>
@@ -100,14 +100,64 @@
 
     </div>
     </div>
+    <!--CHAT-->
+    <div id="chat">
+
+        <br>
+        <div id="chat" class="box-pequeno">
+            <img src="https://www.pngall.com/wp-content/uploads/2017/05/Alert-Download-PNG.png" alt="">
+            <div style="font-size: 9pt;" class="content">
+                <span>REGRAS:</span><br>
+                <label for="">
+                    #SEM XINGAMENTOS<br>
+                    #SEM DESRESPEITO<br>
+                    #SEM TRETAS!!<BR>
+                    
+                  #SEM POLÍTICA, FUTEBOL<br> E RELIGIÃO!<br>
+                </label>
+
+            </div>
+
+        </div>
+        <br>
+        <div onclick="chatatividades()" class="box-pequeno">
+            <img src="https://www.ifpb.edu.br/prpipg/pesquisa/imagens-pesquisa/ifpb.png/@@images/0609b1d7-4a7d-41be-bd18-081ecb35eb9e.png" alt="">
+            <div class="content">
+
+                <span>Atividades</span><br>
+                <label for="">#Somente Atividades do IF</label>
+            </div>
+        </div>
+        <br>
+        <div onclick="errolinks()" id="chat" class="box-pequeno">
+            <img src="https://www.imagenspng.com.br/wp-content/uploads/2020/02/emoji-png-06.png" alt="">
+            <div class="content">
+                <span>Resenhas</span><br>
+                <label for="">#Só Resenhas</label>
+
+            </div>
+
+        </div>
+
+        <br>
+        <div onclick="bugs()" id="chat" class="box-pequeno">
+            <img src="https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132_960_720.png" alt="">
+            <div class="content">
+                <span>Link Errado</span><br>
+                <label for="">#Mande aqui os links<br> que estão errados</label>
+
+            </div>
+
+        </div>
+    </div>
 
 
     <!--AULAS-->
     <BR>
     <div id="divmsg" class="box-pequeno">
 
-        <label>Mensagens:</label><br>
-        <span>MSG AQUIQ</span>
+        <label>Avisos:</label><br>
+        <span>#sem Avisos</span>
 
         <br></div><br>
     <div id="divcurso" class="box-pequeno">
@@ -455,12 +505,18 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
             </div>
 
             <div onclick="pagehelp()" id="pagehelp" class="box-quadrado">
-                <button><i class="fas fa-question-circle"></i></button><br>
-                <span>Ajuda</span>
+                <button><i class="fas fa-comment-alt"></i></button><br>
+                <span>Chat</span>
 
             </div>
         </div>
         <label style="color: gray;text-align: center;" class="fixed-bottom" for="">App Criado por <a target="_blank" style="color: rgba(47, 241, 151, 1);text-decoration: none;" href="https://www.instagram.com/jvitorafb/">João Vitor AFB</a> </label>
+
+
+
+
+
+
 </body>
 
 <script>

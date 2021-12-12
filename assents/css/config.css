@@ -76,7 +76,7 @@ nav {
 .box-pequeno {
     animation: left 0.3s;
     box-sizing: border-box;
-    transition: all 1.5s;
+    transition: 0.5s;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -85,6 +85,11 @@ nav {
     background-color: #292a2e;
     margin: 0 auto;
     border-radius: 20px;
+}
+
+.box-pequeno:hover {
+    transition: 0.5s;
+    transform: scale(105%);
 }
 
 .box-pequeno img {
@@ -302,4 +307,14 @@ select option {
 form label {
     float: left;
     margin-left: 35px;
+}
+
+#chat img {
+    margin-top: -5px;
+    float: left;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    width: 60px;
+    height: auto;
 }
