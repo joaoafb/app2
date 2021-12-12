@@ -209,7 +209,7 @@ function body() {
         divmsg.style.display = "block"
    
     localStorage.setItem("cadastrado", "")
-        location.reload()
+       
          }
 }
 
