@@ -7,6 +7,7 @@
     <title>CHAT APP</title>
     <link rel="stylesheet" href="style.css">
 
+
     <script src="app.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
@@ -35,59 +36,116 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="menu">
-            <p class="welcome"><i onclick="backchat()" class="fas fa-chevron-left"></i> Chat Atividades<b></b></p>
 
-            <div style="clear:both"></div>
+    <div id="menu">
+
+        <div id="top">
+            <nav id="nav" class="navbar fixed-top navbar-light">
+                <div class="container-fluid">
+
+                    <p class="welcome"><i onclick="backchat()" class="fas fa-chevron-left"></i> Chat Atividades<b></b></p>
+                    <img id="logo" width="30px" src="assents/img/logoapp.png" alt="">
+
+                </div>
+            </nav>
         </div>
+    </div>
+    </div>
+    <div id="wrapper">
 
-        <div id="chatbox">
+
+
+
+        <div onclick="chatboxnormal()" id="chatbox">
 
             <ul id="messages">
 
+
+
             </ul>
         </div>
-        <!--  
-        <form onsubmit="return sendMessage();">
-            <input name="usermsg" type="text" id="usermsg" size="63" placeholder="Text Message" />
-            <button id="button" class="button">Send</button>
-        </form> -->
 
-
-        <form onsubmit="return sendMessage();">
-            <div class="campo">
-                <input type="text" id="message" class="input" size="15" maxlength="15" placeholder="Digite uma mensagem" autocomplete="off"><br>
-                <button type="submit" class="button"><i class="far fa-paper-plane"></i></button>
-            </div>
-        </form>
-        <!-- <ul id="messages"></ul> -->
     </div>
+
+
+
+    </div>
+
+    <form onsubmit="return sendMessage();">
+        <div class="campo">
+            <input onclick="teclado()" type="text" id="message" class="input" size="25" maxlength="25" required placeholder="Digite uma mensagem" autocomplete="off"><br>
+            <button type="submit" class="button"><i class="far fa-paper-plane"></i></button>
+        </div>
+    </form>
+
+    </div>
+
 </body>
+
 <script>
     function backchat() {
         location.href = "../index.html"
     }
-    setInterval(function() {
-        document.querySelector("#chatbox").scrollTop = document.querySelector("#chatbox").scrollHeight
-    }, 3000);
-    // listen for incoming messages
+    document.querySelector("#wrapper").scrollTop = document.querySelector("#chatbox").scrollHeight
+
+
+    function tirarbordermsg() {
+
+    }
+
+
+    var data = new Date();
+
+    // Guarda cada pedaço em uma variável
+    var dia = data.getDate(); // 1-31
+    var dia_sem = data.getDay(); // 0-6 (zero=domingo)
+    var mes = data.getMonth(); // 0-11 (zero=janeiro)
+    var ano2 = data.getYear(); // 2 dígitos
+    var ano4 = data.getFullYear(); // 4 dígitos
+    var hora = data.getHours(); // 0-23
+    var min = data.getMinutes(); // 0-59
+    var seg = data.getSeconds(); // 0-59
+    var mseg = data.getMilliseconds(); // 0-999
+    var tz = data.getTimezoneOffset(); // em minutos
+
+    // Formata a data e a hora (note o mês + 1)
+    var str_data = dia + '/' + (mes + 1);
+    var str_hora = hora + ':' + min;
+    const music = new Audio('audio.mp3');
+    var apagamsg = new Audio('apagado.mp3');
+    var send = new Audio('send.mp3')
+        // listen for incoming messages
     firebase.database().ref("msgatividades").on("child_added", function(snapshot) {
         var html = "";
-        // give each message a unique ID
-        html += "<li id='message-" + snapshot.key + "'>";
-        // show delete button if message is sent by me
-        if (snapshot.val().sender == myName) {
 
-            html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>";
-            html += "Apagar";
+        if (snapshot.val().sender == myName) {
+            html += "<li  style='color:white;' class='newmsg'  id='message-" + snapshot.key + "' >";
+            html += "<button style='float:right;' data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>";
+            html += '<i style="animation: suave 2s;" class="fas fa-trash"></i>';
             html += "</button>";
+
+
+            send.play();
+        } else {
+            html += "<li  id='message-" + snapshot.key + "' >";
+
+            music.play();
         }
-        html += '<strong>' + snapshot.val().sender + '</strong> : ' + snapshot.val().message;
+        html += '<span id="hora">' + snapshot.val().hora + '</span>'
+        html += '<strong id="usuario">' + snapshot.val().sender + '</strong>  <br>' + snapshot.val().message;
+
+
+
+
+
         html += "</li>";
 
+
         document.getElementById("messages").innerHTML += html;
+        document.querySelector("#wrapper").scrollTop = document.querySelector("#chatbox").scrollHeight
+
     });
+
 
     function deleteMessage(self) {
         // get message ID
@@ -100,9 +158,12 @@
     // attach listener for delete message
     firebase.database().ref("msgatividades").on("child_removed", function(snapshot) {
         // remove message node
-        document.getElementById("message-" + snapshot.key).innerHTML = "Mensagem Apagada!";
+        document.getElementById("message-" + snapshot.key).innerHTML = '<span class="msgapagada">Mensagem Apagada!</span>'
+        apagamsg.play();
     });
+    document.querySelector("div a img").style.display = "None"
 </script>
+<script src="https://kit.fontawesome.com/d3c038606f.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/d3c038606f.js" crossorigin="anonymous"></script>
 
 </html>

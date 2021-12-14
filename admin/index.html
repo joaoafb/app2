@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assents/img/logoapp.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>App Link</title>
+    <link rel="stylesheet" href="../assents/css/menu.css">
+    <link rel="stylesheet" href="../assents/css/top.css">
+    <link rel="stylesheet" href="../assents/css/config.css">
+    <style>
+        .box-pequeno {
+            overflow-y: scroll;
+        }
+        
+        label,
+        span {
+            margin-left: 0;
+        }
+        
+        input {
+            margin-left: 25px;
+            justify-content: center;
+        }
+        
+        form span {
+            margin-left: 25px;
+            font-size: 6pt;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav" style="background-color: #292a2e;" class="navbar fixed-top navbar-light">
+        <div class="container-fluid">
+
+            <span id="title" style="color: rgba(47, 241, 151, 1);">App Links</span>
+            <img id="logo" width="30px" src="../assents/img/logoapp.png" alt="">
+
+        </div>
+    </nav>
+    <br><br>
+    <!--SELECIONAR TURMA-->
+    <div id="divcurso" class="box-pequeno">
+        <div class="center">
+            <span>Selecione a Turma</span><br>
+            <button onclick="cursoadm()" class="btn">Administracão</button><br>
+            <button onclick="cursoseg()" class="btn">Seg. No Trabalho</button>
+        </div>
+    </div>
+    <!--SELECIONAR ANO-->
+    <div id="divano" style="display:  none;" class="box-pequeno">
+        <div class="center">
+            <span>Selecione o Ano</span><br>
+            <button onclick="pano()" class="btn">1 º</button><br>
+            <button onclick="sano()" class="btn">2 º</button><br>
+            <button onclick="tano()" class="btn">3 º</button>
+        </div>
+    </div>
+
+
+    <div id="mostrarcurso" class="box-pequeno">
+        <span></span>
+    </div>
+    <br>
+    <!--EXCLUIR-->
+
+
+
+
+    <div id="apagarmsg" class="box-pequeno"></div>
+
+
+
+
+
+
+
+    <!--MENU-->
+    <div id="menu">
+        <div id="body">
+
+
+
+
+            <div onclick="addaula()" class="box-quadrado">
+                <button><i class="fas fa-plus"></i></i></button><br>
+                <span>Add Aulas</span>
+            </div>
+
+
+            <div id="pageadm" class="box-quadrado">
+                <button><i class="fas fa-trash"></i></button><br>
+                <span>Excluir</span>
+            </div>
+        </div>
+        <br>
+        <div id="body">
+           
+
+            <div onclick="backapp()" id="pagehelp" class="box-quadrado">
+                <button><i class="fas fa-undo"></i></button><br>
+                <span>Voltar</span>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--ADD AULAS-->
+    <div id="addaula">
+        <div class="box-pequeno">
+            <form action="/" onclick="return false;">
+
+                <label for="">Dia Da Semana: </label><br>
+                <div class="autocomplete">
+                    <input class="input" id="dia" type="text" name="myCountry" placeholder="Digite o Dia Da Aula" required autocomplete="off"><br></div>
+
+                <label for="">Sequência: </label><br>
+                <input size="1" maxlength="1" class="input" id="sequencia" type="number" placeholder="1, 2, 3 ou 4 Aula" required autocomplete="off"><br>
+                <label for="materia">Matéria: </label><br>
+                <input class="input" type="text" id="materia" placeholder="Digite o Nome da Matéria" autocomplete="off" required><br>
+                <label for="link">Link da Aula: </label><br>
+                <input class="input" type="text" placeholder="Link da Aula" required autocomplete="off" id="link"><br>
+                <label for="paula">Primeira Aula: </label><br>
+                <span style="color: gray;font-size: 8pt;">Exemplo: (8hrs as 9hrs // 08:00 as 09:00)</span><br>
+                <input class="input" id="paula" type="text" name="paula" placeholder="Primeira aula" required autocomplete="off"><br>
+                <label for="saula">Segunda Aula: </label><br>
+                <span style="color: gray;font-size: pt;">Exemplo: (9hrs as 19hrs // 09:00 as 10:00)</span><br>
+                <input class="input" id="saula" type="text" placeholder="Segunda aula" autocomplete="off"><br>
+                <label for="prof">Professor: </label><br>
+                <input class="input" type="text" placeholder="Nome do Professor" id="prof" required autocomplete="off"><br>
+                <label for="admin">Seu Nome:</label><br>
+                <input id="admin" disabled class="input" type="text" required autocomplete="off" placeholder="Digite Seu Nome"><br>
+                <br>
+                <div class="center">
+                    <button onclick="add()" type="submit" class="input">Adicionar Aula</button><br>
+                    <button onclick="voltaradmin()" class="btn">Voltar</button></div>
+            </form>
+        </div>
+    </div>
+
+ 
+
+
+
+
+
+    <br><br><br><br><br>
+
+    <nav id="menu" class="navbar fixed-bottom navbar-light " style="background-color: #292a2e;">
+        <div class="container-fluid">
+
+
+
+
+
+
+            <div onclick="backapp()" id="pagehelp" class="btnmenu">
+                <button><i class="fas fa-undo"></i></button><br>
+                <span>Voltar</span>
+    </nav>
+    <div style="display: none;text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;">
+        <a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a>
+    </div>
+    <script>
+        document.querySelector("div a img").style.display = "none"
+        function getCookie(t) {
+            for (var e = t + "=", n = decodeURIComponent(document.cookie).split(";"), o = 0; o < n.length; o++) {
+                for (var i = n[o];
+                    " " == i.charAt(0);) i = i.substring(1);
+                if (0 == i.indexOf(e)) return i.substring(e.length, i.length)
+            }
+            return ""
+        }
+        getCookie("hostinger") && (document.cookie = "hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;", location.reload());
+        var wordpressAdminBody = document.getElementsByClassName("wp-admin")[0],
+            notification = document.getElementsByClassName("notice notice-success is-dismissible"),
+            hostingerLogo = document.getElementsByClassName("hlogo"),
+            mainContent = document.getElementsByClassName("notice_content")[0];
+        if (null != wordpressAdminBody && notification.length > 0 && null != mainContent) {
+            var googleFont = document.createElement("link");
+            googleFontHref = document.createAttribute("href"), googleFontRel = document.createAttribute("rel"), googleFontHref.value = "https://fonts.googleapis.com/css?family=Roboto:300,400,600,700", googleFontRel.value = "stylesheet", googleFont.setAttributeNode(googleFontHref), googleFont.setAttributeNode(googleFontRel);
+            var css = "@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",
+                style = document.createElement("style"),
+                sheet = window.document.styleSheets[0];
+            style.styleSheet ? style.styleSheet.cssText = css : style.appendChild(document.createTextNode(css)), document.getElementsByTagName("head")[0].appendChild(style), document.getElementsByTagName("head")[0].appendChild(googleFont);
+            var button = document.getElementsByClassName("upgrade_button_red")[0],
+                link = button.parentElement;
+            link.setAttribute("href", "https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"), link.innerHTML = '<button class="upgrade_button_red_sale">Go for it</button>', (notification = notification[0]).setAttribute("style", "padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"), notification.className = "notice notice-error is-dismissible";
+            var mainContentHolder = document.getElementById("main_content");
+            mainContentHolder.setAttribute("style", "padding: 0;"), hostingerLogo[0].remove();
+            var h1Tag = notification.getElementsByTagName("H1")[0];
+            h1Tag.className = "000-h1", h1Tag.innerHTML = "Black Friday Prices", h1Tag.setAttribute("style", 'color: white; font-family: "Roboto", sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase;');
+            var h2Tag = document.createElement("H2");
+            h2Tag.innerHTML = "Get 90% Off!", h2Tag.setAttribute("style", 'color: white; margin: 10px 0 15px 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'), h1Tag.parentNode.insertBefore(h2Tag, h1Tag.nextSibling);
+            var paragraph = notification.getElementsByTagName("p")[0];
+            paragraph.innerHTML = "Get Web Hosting for $0.99/month + SSL Certificate for FREE!", paragraph.setAttribute("style", 'font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 15px;');
+            var list = notification.getElementsByTagName("UL")[0];
+            list.remove();
+            
+        }
+    </script>
+</body>
+
+<script>
+</script>
+<script src="https://appjv.000webhostapp.com/tirarlogo.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="autocomplete.js"></script>
+<script src="https://kit.fontawesome.com/d3c038606f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d3c038606f.js" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<script>
+    document.querySelector("a img").style.display = "none"
+
+    function backapp() {
+        location.href = "../index.html"
+    }
+    firebase.initializeApp({
+        apiKey: "AIzaSyAy_xYGRSSPHCIF5lpuCaTpvfjctuEZZMw",
+        authDomain: "app-links-2.firebaseapp.com",
+        projectId: "app-links-2",
+        storageBucket: "app-links-2.appspot.com",
+        messagingSenderId: "936526233804",
+        appId: "1:936526233804:web:d5295aaefb38f9b9af4269",
+        measurementId: "G-L81TPXG7EQ"
+    });
+
+    var db = firebase.firestore();
+</script>
+
+</html>

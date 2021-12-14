@@ -1,30 +1,85 @@
 html {
+    scroll-behavior: smooth;
+    overflow: hidden;
     font-family: 'Be Vietnam Pro', sans-serif;
     box-sizing: border-box;
     animation: suave 0.3s;
     scroll-behavior: smooth;
 }
 
+#chatbox:target {
+    scroll-margin-top: .8em;
+}
+@keyframes bounce { 
+    0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    14.11% { transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    18.72% { transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    24.32% { transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    29.93% { transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    35.54% { transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    41.04% { transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    52.15% { transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    63.26% { transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    85.49% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+  }
+.box-pequeno {
+    animation: left 0.3s;
+    box-sizing: border-box;
+    transition: 0.5s;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 10px;
+    width: 96%;
+    background-color: #292a2e;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
 body {
+    filter: blur(80%);
     font: 12px arial;
-    background-color: #1f1f1f;
+    background-color: #292a2e;
     text-align: center;
     padding: 5px;
 }
 
-.campo {
-    margin-top: 20px;
-    justify-content: center;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 1px;
 }
 
-form,
-p,
-span {
-    margin: 0;
-    padding: 0;
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgba(47, 241, 151, 1);
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+.campotop {
+    width: 100%;
+    left: 0;
+    position: absolute;
+}
+
+.campo {
+    margin: 0 auto;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
 
 a {
@@ -47,18 +102,17 @@ a:hover {
     }
 }
 
-#wrapper,
-#loginform {
+#wrapper {
     animation: left 0.3s;
     box-sizing: border-box;
     transition: all 1.5s;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: scroll;
     text-overflow: ellipsis;
     padding: 10px;
     width: 100%;
-    height: 100%;
-    background-color: #292a2e;
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0.0);
     margin: 0 auto;
     border-radius: 15px;
 }
@@ -78,11 +132,10 @@ a:hover {
     margin-bottom: 5px;
     padding: 0px;
     background-color: transparent;
-    height: 470px;
+    height: auto;
     width: 90%;
     border: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: auto;
     border-radius: 10px;
 }
 
@@ -95,23 +148,57 @@ a:hover {
     border-radius: 5px;
 }
 
+.newmsg {
+    border-radius: 10px 10px 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, transparent 0%, rgb(36, 36, 36) 100%);
+    text-align: right;
+}
+
+.newmsg #hora {
+    padding-bottom: 15px;
+    float: left;
+}
+
 .button {
-    margin-left: 5px;
-    background-color: rgba(47, 241, 151, 1);
-    color: white;
+    margin-left: 0px;
+    background-color: transparent;
+    color: rgba(47, 241, 151, 1);
     padding: 11px 15px;
     border: none;
-    height: 45px;
+    height: 40px;
     cursor: pointer;
-    width: 45px;
+    width: 40px;
+    height: 50px;
+    transition: 0.5s;
     margin-bottom: 10px;
     opacity: 0.9;
-    border-radius: 5px;
+    border-radius: 10px;
+    background: transparent;
+    outline: none;
+}
+
+.button:hover {
+    background: transparent;
+    outline: none;
+    transition: 0.5s;
+}
+
+.button i {
+    background: transparent;
+    outline: none;
+    transition: 0.5s;
+    zoom: 160%;
+}
+
+.button i:hover {
+    transition: 0.5s;
+    transform: scale(105%);
 }
 
 #button:hover {
-    background-color: rgb(18, 61, 79);
-    color: white;
+    transition: 0.5s;
 }
 
 .error {
@@ -128,24 +215,25 @@ a:hover {
     color: rgba(47, 241, 151, 1);
 }
 
+.msgapagada {
+    font-size: 10pt;
+    color: red;
+}
+
 strong {
     font-size: 7pt;
     color: rgba(47, 241, 151, 1);
 }
 
-li {
-    padding-bottom: 20px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-}
-
 li button {
-    background-color: red;
-    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    color: red;
     border: 0;
-    border-radius: 5px;
+    border-radius: 1px;
+    float: right;
+    zoom: 120%;
+    margin-top: 15px;
 }
 
 .login {
@@ -172,15 +260,39 @@ li button {
     margin: 0 0 2px 0;
 }
 
+
 ul {
     padding: 2px;
     list-style-type: none;
 }
 
 li {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    animation: bounce  0.3s;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, transparent 100%, black 100%);
+    border-radius: 10px 10px 0 10px;
+    padding: 10px;
+    margin-top: 15px;
+    transition: all 0.5s;
+    border: 0px solid rgba(255, 255, 255, 0.103);
     display: list-item;
     text-align: -webkit-match-parent;
     font-size: 16px;
+}
+
+#hora {
+    float: right;
+    font-size: 7pt;
+}
+
+@keyframes suave {
+    0% {
+        filter: blur(20px);
+    }
+    100% {
+        filter: blur(0px);
+    }
 }
 
 @media screen and (max-width: 518px) {}
@@ -195,12 +307,12 @@ li {
     animation: suave 0.4s;
     border: 1px solid rgba(47, 241, 151, 1);
     border-radius: 10px;
-    width: 65%;
-    height: 25px;
+    width: 75%;
+    height: 26px;
 }
 
 input::placeholder {
-    color: rgba(47, 241, 150, 0.479);
+    color: white;
 }
 
 @keyframes suave {

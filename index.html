@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,22 +22,21 @@
         <div class="container-fluid">
 
             <span id="title" style="color: rgba(47, 241, 151, 1);">App Links</span>
-            <button onclick="resetar()" id="btnresetar" style="color: red;height: 30px;" class="btn-pequeno">RESETAR APP</button>
-            <img onclick="logo()" id="logo" width="30px" src="assents/img/logoapp.png" alt="">
+            <img id="logo" width="30px" src="assents/img/logoapp.png" alt="">
 
         </div>
     </nav>
     <br><br>
 
-    <!--CONFIGURAÇOES--><br>
+    <!--CONFIGURAcOES--><br>
     <div id="config">
         <div class="box-pequeno">
             <img src="assents/img/user.png" alt="">
             <div class="content-left">
                 <label for="">Nome:</label>
-                <span id="mostrarnome">João Vitor Alves</span> <br>
+                <span id="mostrarnome">aguarde...</span> <br>
                 <label for="">Curso:</label>
-                <span id="mostrarcurso">ADM 2º </span>
+                <span id="mostrarcurso">aguarde...</span>
                 <br>
 
                 <label for="">Codigo(IFBA):</label>
@@ -85,7 +85,7 @@
 
             <div onclick="pageconfig()" id="pageconfig" class="btnmenu">
                 <button><i class="fas fa-cog"></i></button><br>
-                <span>Configurações</span>
+                <span>Configuracões</span>
             </div>
 
             <div onclick="backmenu()" id="pagehelp" class="btnmenu">
@@ -154,23 +154,24 @@
 
     <!--AULAS-->
     <BR>
-    <div id="divmsg" class="box-pequeno">
+    <div id="divmsg" onclick="aviso()" style="width: 80%;border-radius: 10px;" class="box-pequeno">
 
         <label>Avisos:</label><br>
-        <span>#sem Avisos</span>
+        <span>*Aqui Aqui Para Mostrar*</span>
+        <i style="zoom: 140%;color:rgba(47, 241, 151, 1) ;float: right;" class="fas fa-sync-alt"></i>
 
         <br></div><br>
     <div id="divcurso" class="box-pequeno">
         <label for="">Curso:</label><br>
-        <span>ADM 2º </span>
+        <span>aguarde...</span>
     </div>
     <br>
     <div id="divaulas" class="box-pequeno">
         <div class="flexrow">
-            <button id="anterior" class="btn-pequeno"><i class="fas fa-arrow-left"></i>Dia Anterior</button>
+            <button id="anterior" class="btn"><i class="fas fa-arrow-left"></i>Dia Anterior</button>
 
 
-            <button id="proximo" style="float: right;" class="btn-pequeno">Proximo dia<i class="fas fa-arrow-right"></i></button>
+            <button id="proximo" style="float: right;" class="btn">Proximo dia<i class="fas fa-arrow-right"></i></button>
         </div>
         <label style="color: rgba(47, 241, 151, 1);font-size: 15pt;text-align: center;   display: flex;
         flex-direction: column;
@@ -187,19 +188,19 @@
                 <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
             </div>
             <div class="aula">
-                <span><strong>1#</strong> INGLES</span><br>
-                <label style="font-size: 10pt;">Das 08hrs as 9hrs</label><br>
-                <label style="font-size: 10pt;">Prof Joao</label>><br>
+                <span id="nomedaaula"><strong id="sequenciadaaula">1</strong> Não Add</span><br>
+                <label style="font-size: 10pt;" id="horarioaula">#horario</label><br>
+                <label id="profaula" style="font-size: 10pt;">Prof</label>><br>
 
                 <br>
 
-
+                <div class="btns">
+                    <button id="entrar" class="btn">Entrar</button>
+                    <button id="share" class="btn">Compartilhar</button>
+                </div>
             </div>
             <br>
-            <div class="btns">
-                <button class="btn">Entrar</button>
-                <button class="btn">Compartilhar</button>
-            </div>
+
         </div>
 
 
@@ -214,18 +215,18 @@
                 <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
             </div>
             <div class="aula">
-                <span><strong>2#</strong> Matemática</span><br>
-                <label style="font-size: 10pt;">Das 09hrs as 10hrs</label><br>
-                <label style="font-size: 10pt;">Prof Pablo</label>><br>
+                <span id="nomedaaula2"><strong id="sequenciadaaula2">2</strong> Não Add</span><br>
+                <label style="font-size: 10pt;" id="horarioaula2">#horario</label><br>
+                <label id="profaula2" style="font-size: 10pt;">Prof</label>><br>
                 <br>
 
-
+                <div class="btns">
+                    <button id="entrar2" class="btn">Entrar</button>
+                    <button id="share2" class="btn">Compartilhar</button>
+                </div>
             </div>
             <br>
-            <div class="btns">
-                <button class="btn">Entrar</button>
-                <button class="btn">Compartilhar</button>
-            </div>
+
         </div>
 
 
@@ -241,18 +242,18 @@
                 <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
             </div>
             <div class="aula">
-                <span><strong>3#</strong> Fisica</span><br>
-                <label style="font-size: 10pt;">Das 10hrs as 11hrs</label><br>
-                <label style="font-size: 10pt;">Prof Lay</label>><br>
+                <span id="nomedaaula3"><strong id="sequenciadaaula3">3</strong> Não Add</span><br>
+                <label style="font-size: 10pt;" id="horarioaula3">#horario</label><br>
+                <label id="profaula3" style="font-size: 10pt;">Prof</label>><br>
                 <br>
 
-
+                <div class="btns">
+                    <button id="entrar3" class="btn">Entrar</button>
+                    <button id="share3" class="btn">Compartilhar</button>
+                </div>
             </div>
             <br>
-            <div class="btns">
-                <button class="btn">Entrar</button>
-                <button class="btn">Compartilhar</button>
-            </div>
+
         </div>
 
 
@@ -266,32 +267,21 @@
                 <i style="color: rgba(47, 241, 151, 1);float: right;margin-top: 50px;" class="fas fa-arrow-right"></i>
             </div>
             <div class="aula">
-                <span><strong>4#</strong> Portugues</span><br>
-                <label style="font-size: 10pt;">Das 11hrs as 12hrs</label><br>
-                <label style="font-size: 10pt;">Prof Vinni</label>><br>
+                <span id="nomedaaula4"><strong id="sequenciadaaula4">4</strong> Não Add</span><br>
+                <label style="font-size: 10pt;" id="horarioaula4">#horario</label><br>
+                <label id="profaula4" style="font-size: 10pt;">Prof</label>><br>
                 <br>
 
-
+                <div class="btns">
+                    <button id="entrar4" class="btn">Entrar</button>
+                    <button id="share4" class="btn">Compartilhar</button>
+                </div>
             </div><br>
-            <div class="btns">
-                <button class="btn">Entrar</button>
-                <button class="btn">Compartilhar</button>
 
-            </div>
 
         </div>
-        <br>
-
-
-
-        <button style="margin: 0 auto;justify-content: center;text-align: center;display: flex;
-          border: 1px solid gray;" id="btnmais" onclick="mais()" class="btn">Ver em Lista...</button>
-
-        <br>
-        <button style="display: none;margin: 0 auto;justify-content: center;text-align: center;display: flex;
-border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</button>
-        <br> <br> <br>
-
+      
+        <br> 
 
     </div>
 
@@ -306,9 +296,9 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
 
 
             <div class="aula">
-                <span><strong>1#</strong> INGLES</span><br>
-                <label style="font-size: 10pt;">Das 08hrs as 9hrs</label><br>
-                <label style="font-size: 10pt;">Prof Joao</label>><br>
+                <span><strong>1</strong> Não Add</span><br>
+                <label style="font-size: 10pt;">#horario</label><br>
+                <label style="font-size: 10pt;">Prof </label>><br>
 
 
 
@@ -326,13 +316,13 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
 
 
             <div class="aula">
-                <span><strong>2#</strong> Matemática</span><br>
-                <label style="font-size: 10pt;">Das 09hrs as 10hrs</label><br>
-                <label style="font-size: 10pt;">Prof Pablo</label>><br>
+                <span><strong>2</strong> Não add</span><br>
+                <label style="font-size: 10pt;">#horario</label><br>
+                <label style="font-size: 10pt;">Prof</label>><br>
                 <br>
 
                 <div class="btns">
-                    <button class="btn">Entrar</button>
+                    <button   class="btn">Entrar</button>
                     <button class="btn">Compartilhar</button>
                 </div>
             </div>
@@ -345,9 +335,9 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
 
 
             <div class="aula">
-                <span><strong>3#</strong> Fisica</span><br>
-                <label style="font-size: 10pt;">Das 10hrs as 11hrs</label><br>
-                <label style="font-size: 10pt;">Prof Lay</label>><br>
+                <span><strong>3</strong> Não Add</span><br>
+                <label style="font-size: 10pt;">#horario</label><br>
+                <label style="font-size: 10pt;">Prof </label>><br>
                 <br>
 
                 <div class="btns">
@@ -364,9 +354,9 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
 
 
             <div class="aula">
-                <span><strong>4#</strong> Portugues</span><br>
-                <label style="font-size: 10pt;">Das 11hrs as 12hrs</label><br>
-                <label style="font-size: 10pt;">Prof Vinni</label>><br>
+                <span><strong>4</strong> Não Add</span><br>
+                <label style="font-size: 10pt;">#horario</label><br>
+                <label style="font-size: 10pt;">Prof</label>><br>
                 <br>
 
                 <div class="btns">
@@ -392,7 +382,7 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
         <span><strong>Selecione o Dia: </strong> </span><br><br>
         <div style="margin: 0;display: flex;flex-direction: row;">
             <button onclick="segunda()" class="btn">Segunda</button>
-            <button onclick="terca()" class="btn">Terça</button></div>
+            <button onclick="terca()" class="btn">Terca</button></div>
         <br>
         <div style="margin: 0;display: flex;flex-direction: row;">
             <button onclick="quarta()" class="btn">Quarta</button>
@@ -469,8 +459,9 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
         <br>
 
         <br>
-        <form action="">Seu Usuario: </label><br>
-            <input autocomplete="off" required size="20" maxlength="20" type="text" class="input" id="inputusuario" placeholder="Digite Aqui">
+        <form action="">
+            <label for="">Seu Nome:</label><br>
+            <input autocomplete="off" required type="text" class="input" id="inputnomeadmin" placeholder="Digite Seu Nome">
             <br>
             <label for="">Seu Senha:</label><br>
             <input autocomplete="off" required size="15" maxlength="15" type="password" class="input" id="inputpass" placeholder="Digite Sua Senha">
@@ -510,14 +501,14 @@ border: 1px solid gray;" id="btnvoltar" onclick="voltar()" class="btn">Voltar</b
 
             </div>
         </div>
-        <label style="color: gray;text-align: center;" class="fixed-bottom" for="">App Criado por <a target="_blank" style="color: rgba(47, 241, 151, 1);text-decoration: none;" href="https://www.instagram.com/jvitorafb/">João Vitor AFB</a> </label>
+        <label style="color: gray;text-align: center;" id="footer" class="fixed-bottom" for="">App Criado por <a target="_blank" style="color: rgba(47, 241, 151, 1);text-decoration: none;" href="https://www.instagram.com/jvitorafb/">João Vitor AFB</a> </label>
 
 
 
 
 
 
-</body>
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(t){for(var e=t+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(e))return i.substring(e.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var wordpressAdminBody=document.getElementsByClassName("wp-admin")[0],notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0];if(null!=wordpressAdminBody&&notification.length>0&&null!=mainContent){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">Go for it</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),notification.className="notice notice-error is-dismissible";var mainContentHolder=document.getElementById("main_content");mainContentHolder.setAttribute("style","padding: 0;"),hostingerLogo[0].remove();var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.className="000-h1",h1Tag.innerHTML="Black Friday Prices",h1Tag.setAttribute("style",'color: white; font-family: "Roboto", sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase;');var h2Tag=document.createElement("H2");h2Tag.innerHTML="Get 90% Off!",h2Tag.setAttribute("style",'color: white; margin: 10px 0 15px 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'),h1Tag.parentNode.insertBefore(h2Tag,h1Tag.nextSibling);var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="Get Web Hosting for $0.99/month + SSL Certificate for FREE!",paragraph.setAttribute("style",'font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 15px;');var list=notification.getElementsByTagName("UL")[0];list.remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/bf-2020-wp-inject-img.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0]}</script></body>
 
 <script>
 </script>
