@@ -74,6 +74,7 @@ html {
     border-radius: 10px;
 }
 #divdias {
+    
     width: 80%;
     border-radius: 10px;
 }
@@ -102,7 +103,11 @@ nav {
 #body {
     animation: right 0.5s;
 }
+.welcome i {
+    cursor: pointer;
+}
 .box-pequeno {
+    cursor: pointer;
     animation: left 0.3s;
     box-sizing: border-box;
     transition: 0.5s;
@@ -114,6 +119,7 @@ nav {
     background-color: #292a2e;
     margin: 0 auto;
     border-radius: 20px;
+    
 }
 
 .box-pequeno:hover {
@@ -189,7 +195,8 @@ nav {
 }
 
 .btn {
-
+    
+    justify-content: center;
     text-align: center;
     height: 40px;
     margin: 0 auto;
