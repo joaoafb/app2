@@ -1,0 +1,23 @@
+{
+  "name": "App Links",
+  "version": "1.0.0",
+  "description": "App Com Todos os Links Das Aulas Online do IFBA Campus Juazeiro Criado Por João Vitor Alves (Aulo do If)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "app",
+    "applinks",
+    "ifba",
+    "linksaulas",
+    "aulas online"
+  ],
+  "author": "João Vitor Alves",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^16.0.4",
+    "electron-packager": "^15.4.0"
+  }
+}
