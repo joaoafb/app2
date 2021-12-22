@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
-body {
+html body {
     background-color: #1f1f1f;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: 'SF Pro';
+    src: url('fonts/SF-Pro-Display-Bold.otf') format('truetype');
 }
 
 .btnmenu {
+    background-color: transparent;
     transition: 0.4s;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     border: 0;
     text-align: center;
     justify-content: center;

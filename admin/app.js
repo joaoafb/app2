@@ -333,3 +333,44 @@ function terceiroanoseg() {
             console.error("Erro ao Adicionar a Aula ", error);
         });
 }
+
+
+
+
+
+
+
+
+
+function mostraralunos(){
+
+
+
+
+
+  
+
+
+   
+
+
+    db.collection("usuarios").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            
+            const body = document.querySelector("ul");
+          
+
+            const paragrafo = document.createElement("li");
+
+            const texto = document.createTextNode(doc.data().nome);
+            
+            paragrafo.appendChild(texto)             
+            console.log(paragrafo);
+            body.innerHTML += paragrafo.innerHTML;
+        });
+    });
+         
+
+            
+           
+       }

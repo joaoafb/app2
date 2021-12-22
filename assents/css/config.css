@@ -1,4 +1,6 @@
 html {
+    font-family: 'SF Pro';
+    src: url('fonts/SF-Pro-Display-Bold.otf') format('truetype');
     box-sizing: border-box;
     animation: suave 0.3s;
     scroll-behavior: smooth;
@@ -6,12 +8,10 @@ html {
 
 @keyframes footer {
     0% {
-        
         filter: blur(10px);
         opacity: 0;
     }
     100% {
-      
         filter: blur(0);
         opacity: 100;
     }
@@ -69,19 +69,22 @@ html {
         filter: blur(0);
     }
 }
+
 #divaulas {
     width: 80%;
     border-radius: 10px;
 }
+
 #divdias {
-    
     width: 80%;
     border-radius: 10px;
 }
-#divcurso{
+
+#divcurso {
     width: 80%;
     border-radius: 10px;
 }
+
 #menuinicial {
     animation: left 0.5s;
 }
@@ -97,15 +100,19 @@ nav {
 #nav {
     animation: nav 0.5s;
 }
-#footer{
+
+#footer {
     animation: footer 0.5s;
 }
+
 #body {
     animation: right 0.5s;
 }
+
 .welcome i {
     cursor: pointer;
 }
+
 .box-pequeno {
     cursor: pointer;
     animation: left 0.3s;
@@ -119,7 +126,6 @@ nav {
     background-color: #292a2e;
     margin: 0 auto;
     border-radius: 20px;
-    
 }
 
 .box-pequeno:hover {
@@ -195,7 +201,6 @@ nav {
 }
 
 .btn {
-    
     justify-content: center;
     text-align: center;
     height: 40px;
@@ -203,7 +208,7 @@ nav {
     outline: none;
     border: 1px solid rgba(47, 241, 151, 1);
     font-size: 9pt;
-    width:50%;
+    width: 50%;
     margin-left: 5px;
     border-radius: 10px;
     background-color: transparent;
@@ -244,14 +249,14 @@ nav {
     background-color: transparent;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     animation: suave 0.4s;
-    border: 1px solid rgba(47, 241, 151, 1);
+    border: 1px solid rgba(47, 241, 150, 0.336);
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     height: 45px;
 }
 
 input::placeholder {
-    color: white;
+    color: gray;
 }
 
 select option {
@@ -263,7 +268,7 @@ select option {
 .box-pequeno button {
     transition: 0.5s;
     animation: suave 0.5s;
-    color: white;
+    color: rgba(47, 241, 151, 1);
 }
 
 .box-pequeno button:hover {
@@ -274,14 +279,17 @@ select option {
 }
 
 #divsucesso {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 120px;
+    width: 100%;
 }
 
-#divsucesso img {
-    text-align: center;
-    margin: 0 auto;
+#divsucesso .box-pequeno img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 100px;
 }
 
@@ -307,6 +315,8 @@ select option {
 }
 
 .box-quadrado {
+    position: relative;
+    overflow: hidden;
     box-sizing: border-box;
     animation: suave 0.5s;
     transition: all 1.5s;
@@ -318,7 +328,7 @@ select option {
     height: 100px;
     background-color: #292a2e;
     margin: 0 auto;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 .box-quadrado button {
@@ -344,8 +354,9 @@ select option {
 }
 
 form label {
+    color: white;
     float: left;
-    margin-left: 35px;
+    margin-left: 5px;
 }
 
 #chat img {
@@ -366,4 +377,17 @@ form label {
     background-color: rgba(47, 241, 151, 1);
     border-bottom: 1px solid rgba(47, 241, 151, 1);
     border-radius: 10px;
+}
+
+.btn-danger {
+    width: 6s0px;
+    transition: 0.5s;
+    position: relative;
+    float: right;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    color: white;
+    text-align: center;
+    background-color: red;
 }

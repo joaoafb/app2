@@ -27,23 +27,23 @@ divadm.style.display = "none"
 chat.style.display = "none"
 
 
-           
-     
-        function aviso(){
-            db.collection("mensagem").doc("1").get().then((doc) => {
-                if (doc.exists) {
-                  document.querySelector("#divmsg span").innerHTML = doc.data().msg 
-                } else {
-                    // doc.data() will be undefined in this case
-                    console.log("No such document!");
-                }
-            }).catch((error) => {
-                console.log("Error getting document:", error);
-            });
+
+
+function aviso() {
+    db.collection("mensagem").doc("1").get().then((doc) => {
+        if (doc.exists) {
+            document.querySelector("#divmsg span").innerHTML = doc.data().msg
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
         }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
 
 
-   
+
 
 document.getElementById("btnvoltar").style.display = "none"
 
@@ -64,6 +64,10 @@ function pageadm() {
     divmsg.style.display = "None"
     config.style.display = "None"
     title.innerText = "Administrador"
+
+    if (localStorage.getItem("acessoadmin") == "sim") {
+        location.href = "admin/index.html"
+    }
 
 }
 
@@ -390,7 +394,7 @@ function cadastrar() {
         inputcurso.value == "seg" ||
         inputcurso.value == "ADM" ||
         inputcurso.value == "SEG" ||
-        inputcurso.value == "Adm" || 
+        inputcurso.value == "Adm" ||
         inputcurso.value == "Seg") {
         caduser()
 
@@ -465,5 +469,8 @@ function bugs() {
 }
 
 function chatatividades() {
+
+
+
     location.href = "chatatividades/index.html"
 }

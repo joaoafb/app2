@@ -9,3 +9,12 @@ function copy() {
 
     setInterval(function() { document.getElementById("alert").style.display = "none" }, 2000);
 }
+
+function deslogar(){
+    localStorage.clear()
+    setInterval(
+        function(){
+            location.reload()
+        }, 500
+    )
+}

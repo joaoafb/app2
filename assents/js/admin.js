@@ -9,6 +9,7 @@ function logar() {
                 admin: document.querySelector("#inputnomeadmin").value
             })
             .then(() => {
+                localStorage.setItem("acessoadmin", "sim")
                 localStorage.setItem("nomeadmin", document.querySelector("#inputnomeadmin").value)
                 console.log("Admin Cadastrado!");
                 location.href = "admin/index.html"

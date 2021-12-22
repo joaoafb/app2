@@ -4,7 +4,7 @@
 <head>
     <link rel="shortcut icon" href="../assents/img/logoapp.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+ 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,13 @@
         form span {
             margin-left: 25px;
             font-size: 6pt;
+        }
+
+        .left {
+            float: left;
+        }
+        .right{
+            float: right;
         }
     </style>
 </head>
@@ -68,13 +75,27 @@
         <span></span>
     </div>
     <br>
-    <!--EXCLUIR-->
+    <!--MOSTRAR ALUNOS-->
 
 
 
 
-    <div id="apagarmsg" class="box-pequeno"></div>
+    <div id="alunos" class="box-pequeno">
+        <label for="">Alunos Cadastrados:</label>
+        <span onclick="mostraralunos()" style="float: right;">Mostrar</span><br>
+        <div>
+            <div class="left">
+        <label for="">Nome:</label>
+        <ul id="ul" style="color: white;">
+            <li></li>
+           
+        </ul>
+    </div>
+    <div class="right">
+        <label for="">Matricula:</label></div>
+        </div>
 
+    </div>
 
 
 
